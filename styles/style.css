@@ -1,0 +1,137 @@
+*,
+*::after,
+*::before {
+  padding: 0;
+  margin: 0;
+  font-family: "Playfair Display", serif;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #000;
+  position: relative;
+  min-height: 450px;
+  height: 100vh;
+  padding-top: 10px;
+  min-width: 400px;
+}
+@media (prefers-color-scheme: dark) {
+  body {
+    background-color: #020244;
+    color: #000;
+  }
+  body h1,
+  body footer {
+    color: #fff;
+  }
+}
+@media (prefers-color-scheme: light) {
+  body {
+    background-color: #fff;
+    color: #000;
+  }
+  body h1,
+  body footer {
+    color: #000;
+  }
+}
+body h1 {
+  text-align: center;
+  font-size: 30px;
+}
+
+.Container {
+  max-width: 500px;
+  width: 90%;
+  margin: 20px auto;
+}
+.Container .inputarea {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.Container .inputarea input {
+  height: 35px;
+  font-size: 15px;
+  width: 100%;
+  border-radius: 5px;
+  padding: 10px;
+}
+.Container .inputarea .buttonContainer {
+  align-self: flex-start;
+  margin-top: 15px;
+}
+.Container .inputarea .buttonContainer button {
+  padding: 10px;
+  text-transform: uppercase;
+  font-weight: 600;
+  background-color: #020244;
+  border: 1px solid #fff;
+  transition: 0.2s;
+  border-radius: 5px;
+  color: #fff;
+}
+.Container .inputarea .buttonContainer button:hover {
+  background-color: gray;
+  transform: scale(1.03);
+}
+.Container .inputarea .buttonContainer button:active {
+  background-color: #fff;
+  transform: scale(1.07);
+  color: #000;
+}
+.Container .OutputArea {
+  margin-top: 20px;
+  background-color: #fff;
+  height: 50vh;
+  padding: 5px;
+  border-radius: 5px;
+  overflow-y: auto;
+  overflow-x: hidden;
+  text-align: center;
+  position: relative;
+  border: 2px solid #020244;
+}
+.Container .OutputArea .hide {
+  display: none;
+}
+.Container .OutputArea .nothing {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  transition: 0.3s;
+}
+.Container .OutputArea .nothing h1 {
+  text-transform: uppercase;
+  font-size: 4vmin;
+}
+.Container .OutputArea .nothing p {
+  text-transform: capitalize;
+  text-align: justify;
+  letter-spacing: 1px;
+  font-size: 2vmin;
+  font-weight: 600;
+}
+.Container .OutputArea .unorderedList {
+  z-index: 10;
+}
+.Container .OutputArea .unorderedList li {
+  color: #020244;
+  padding: 10px;
+  list-style: upper-roman;
+  list-style-position: inside;
+  border-bottom: 1px solid #000;
+  margin-bottom: 5px;
+  text-align: justify;
+}
+.Container .OutputArea .unorderedList li a {
+  text-decoration: none;
+}
+
+footer {
+  position: absolute;
+  width: 100%;
+  text-align: center;
+  bottom: 0;
+}/*# sourceMappingURL=style.css.map */

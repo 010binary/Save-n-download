@@ -1,0 +1,130 @@
+@import './reset';
+
+body {
+    background-color: $darkTextColor;
+    @include applyColor();
+    position: relative;
+    min-height: 450px;
+    height: 100vh;
+    padding-top: 10px;
+    min-width: 400px;
+
+    h1 {
+        text-align: center;
+        font-size: 30px;
+    }
+}
+
+
+.Container {
+    max-width: 500px;
+    width: 90%;
+    margin: 20px auto;
+
+    .inputarea {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+
+        input {
+            height: 35px;
+            font-size: 15px;
+            width: 100%;
+            border-radius: 5px;
+            padding: 10px;
+        }
+
+        .buttonContainer {
+            align-self: flex-start;
+            margin-top: 15px;
+
+            button {
+                padding: 10px;
+                text-transform: uppercase;
+                font-weight: 600;
+                background-color: $primaryColor;
+                border: 1px solid #fff;
+                transition: .2s;
+                border-radius: 5px;
+                color: #fff;
+
+                &:hover {
+                    background-color: gray;
+                    transform: scale(1.03);
+                }
+
+                &:active {
+                    background-color: #fff;
+                    transform: scale(1.07);
+                    color: #000;
+                }
+            }
+        }
+    }
+
+    .OutputArea {
+        margin-top: 20px;
+        background-color: #fff;
+        height: 50vh;
+        padding: 5px;
+        border-radius: 5px;
+        overflow-y: auto;
+        overflow-x: hidden;
+        text-align: center;
+        position: relative;
+        border: 2px solid $primaryColor;
+
+
+        .hide {
+            display: none;
+        }
+
+        .nothing {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            transition: .3s;
+
+            h1 {
+                text-transform: uppercase;
+                font-size: 4vmin;
+            }
+
+            p {
+                text-transform: capitalize;
+                text-align: justify;
+                letter-spacing: 1px;
+                font-size: 2vmin;
+                font-weight: 600;
+            }
+
+        }
+
+        .unorderedList {
+            z-index: 10;
+
+            li {
+                color: $primaryColor;
+                padding: 10px;
+                list-style: upper-roman;
+                list-style-position: inside;
+                border-bottom: 1px solid $darkTextColor;
+                margin-bottom: 5px;
+                text-align: justify;
+
+                a {
+                    text-decoration: none;
+                }
+            }
+        }
+    }
+}
+
+footer {
+    position: absolute;
+    width: 100%;
+    text-align: center;
+    bottom: 0;
+}

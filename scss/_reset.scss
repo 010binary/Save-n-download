@@ -1,0 +1,44 @@
+*,
+*::after,
+*::before {
+    padding: 0;
+    margin: 0;
+    font-family: 'Playfair Display', serif;
+    box-sizing: border-box;
+}
+
+$primaryColor : #020244;
+$SecondaryColor : #fff;
+$darkTextColor: #000;
+
+@mixin applyColorScheme($theme) {
+    @if $theme ==dark {
+        background-color: $primaryColor;
+        color: $darkTextColor;
+
+        h1,
+        footer {
+            color: $SecondaryColor;
+        }
+    }
+
+    @else {
+        background-color: $SecondaryColor;
+        color: $darkTextColor;
+
+        h1,
+        footer {
+            color: $darkTextColor;
+        }
+    }
+}
+
+@mixin applyColor() {
+    @media (prefers-color-scheme: dark) {
+        @include applyColorScheme(dark);
+    }
+
+    @media (prefers-color-scheme: light) {
+        @include applyColorScheme(light);
+    }
+}
