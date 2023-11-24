@@ -8,12 +8,6 @@ const empty = document.querySelector('.nothing');
 let links = [];
 let linksFromLocalStorage = JSON.parse(localStorage.getItem('Savings'))
 
-const tabs = [
-    {
-        url: 'https://github.com/010binary'
-    }
-]
-
 // Function to toggle visibility of empty element
 const hideToggler = () => {
     if (links.length > 0) {
@@ -36,7 +30,6 @@ const render = () => {
                 </li>`
     }
     // rendering the list element
-
     ulEl.innerHTML += lists;
 
     //removeing the hide class from the display
@@ -45,12 +38,12 @@ const render = () => {
 
 //Local Storage
 if (linksFromLocalStorage) {
+
     links = linksFromLocalStorage
     render()
-
 }
 // The Button Reaction function
-function buttonAction() {
+const buttonAction = () => {
 
     if (inputfield.value === '') {
         alert('Please Input a Link');
@@ -62,8 +55,25 @@ function buttonAction() {
     }
 }
 
-// Event Listener for the Button
+// To Clear all the add
+deleteAllFunction = () => {
+    localStorage.clear()
+    location.reload()
+}
+
+const saveTabFunction = () => {
+    // Get the URL of the current tab
+    const currentURL = window.location.href;
+    links.push(currentURL)
+    localStorage.setItem('Savings', JSON.stringify(currentURL))
+    render()
+}
+
+// Event Listener for the Buttons
 button.addEventListener('click', () => buttonAction());
+saveTab.addEventListener('click', () => saveTabFunction());
+deleteAll.addEventListener('click', () => deleteAllFunction());
+
 
 // This is to ensure the values added last are rendered to the container
 render()
@@ -71,19 +81,3 @@ render()
 // To show the empty div when the code starts
 hideToggler();
 
-// To Clear all the add
-deleteAll.addEventListener('click', () => {
-    localStorage.clear()
-    location.reload()
-})
-
-saveTab.addEventListener('click', () => {
-    chrome.tabs.query({ active: true, currentWindow: true }, function (tabs) {
-
-    }) //tring to get the current chrome tab
-
-    let tabb = tabs[0].url
-    links.push(tabb)
-    localStorage.setItem('Savings', JSON.stringify(links))
-    render()
-})
