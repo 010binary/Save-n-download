@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="shortcut icon" href="./Logo.png" type="image/x-icon">
+    <link rel="shortcut icon" href="./Logo.png" type="image/x-icon" />
     <link rel="stylesheet" href="./styles/style.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -15,31 +15,36 @@
   </head>
   <body>
     <header>
-    <h1>
-      Save 'n' Download
-    </h1>
-  </header> <main>
-    <div class="Container">
-      <div class="inputarea">
-        <input type="text" id="input-el" placeholder="Input Your Link ...." />
+      <h1>Save 'n' Download</h1>
+    </header>
+    <main>
+      <div class="Container">
+        <div class="inputarea">
+          <input
+            type="textarea"
+            id="input-el"
+            placeholder="Input Your Link ...."
+          />
 
-        <div class="buttonContainer">
-          <button id="input-btn">save input</button>
+          <div class="buttonContainer">
+            <button id="input-btn">save input</button>
+            <button id="delete-all">delete all</button>
+            <button id="save-tab" class="save-tab" >save-tab</button>
+          </div>
+        </div>
+        <div class="OutputArea">
+          <div class="nothing hide">
+            <h2>Nothing Here</h2>
+            <p>Try inputing a link and saving it.</p>
+          </div>
+          <ul id="unorderedList" class="unorderedList"></ul>
         </div>
       </div>
-      <div class="OutputArea">
-        <div class="nothing hide">
-          <h2>Nothing Here</h2>
-          <p>Try inputing a link and saving it.</p>
-        </div>
-        <ul id="unorderedList" class="unorderedList"></ul>
-      </div>
-    </div>
-  </main>
-  <footer>
-    <h3>Developed by Alpha</h3>
-    <p>Property of Alpha Solution &COPY; 2023</p>
-  </footer>
+    </main>
+    <footer>
+      <h3>Developed by Alpha</h3>
+      <p>Property of Alpha Solution &COPY; 2023</p>
+    </footer>
     <script src="./Javascript/main.js" defer></script>
   </body>
 </html>

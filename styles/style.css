@@ -129,6 +129,21 @@ body h1 {
   text-decoration: none;
 }
 
+#save-tab {
+  background-color: #d6d1d1;
+  color: #020244;
+  border: 1px solid #020244;
+}
+#save-tab:hover {
+  background-color: gray;
+  transform: scale(1.03);
+}
+#save-tab:active {
+  background-color: #fff;
+  transform: scale(1.07);
+  color: #000;
+}
+
 footer {
   position: absolute;
   width: 100%;

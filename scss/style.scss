@@ -59,6 +59,7 @@ body {
                     transform: scale(1.07);
                     color: #000;
                 }
+
             }
         }
     }
@@ -119,6 +120,23 @@ body {
                 }
             }
         }
+    }
+}
+
+#save-tab {
+    background-color: #d6d1d1;
+    color: $primaryColor;
+    border: 1px solid $primaryColor;
+
+    &:hover {
+        background-color: gray;
+        transform: scale(1.03);
+    }
+
+    &:active {
+        background-color: #fff;
+        transform: scale(1.07);
+        color: #000;
     }
 }
 
