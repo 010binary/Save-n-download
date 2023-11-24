@@ -48,7 +48,8 @@ const buttonAction = () => {
     if (inputfield.value === '') {
         alert('Please Input a Link');
     } else {
-        links.push(inputfield.value);
+        let load = inputfield.value.trim()
+        links.push(load);
         inputfield.value = '';
         render()
         localStorage.setItem('Savings', JSON.stringify(links))
@@ -62,11 +63,12 @@ deleteAllFunction = () => {
 }
 
 const saveTabFunction = () => {
-    // Get the URL of the current tab
-    const currentURL = window.location.href;
-    links.push(currentURL)
-    localStorage.setItem('Savings', JSON.stringify(currentURL))
-    render()
+    chrome.tabs.query({ active: true, currentWindow: true }, function (tabs) {
+        // tabs[0].url.trimStart()
+        links.push(tabs[0].url)
+        render()
+        localStorage.setItem('Savings', JSON.stringify(tabs[0].url))
+    })
 }
 
 // Event Listener for the Buttons
